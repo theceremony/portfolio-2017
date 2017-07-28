@@ -25,7 +25,7 @@ class WorkItem extends Component {
         <div id={this.props.project.projectId} className="work-item">
           <h2>{this.props.project.clientName}</h2>
           <h3>{this.props.project.projectSubHead}</h3>
-          <img src={"/img/work/" + this.props.project.mediaFolder + "/main.jpg"} />
+          <img alt={this.props.project.clientName} src={"/img/work/" + this.props.project.mediaFolder + "/main.jpg"} />
         </div>
       )
   }
@@ -33,16 +33,11 @@ class WorkItem extends Component {
 
 export class Work extends Component {
   render() {
-    console.log(projectJSON)
+    let projects = projectJSON.map((project, index) => {
+       return <WorkItem key={ index } project={project} />;
+    });
     return (
-      <Page title="Work">
-        {projectJSON.map((project, index) =>{
-           return <WorkItem
-              key={ index }
-              project={project}
-            />;
-         })}
-      </Page>
+      <Page title="Work">{projects}</Page>
     )
   }
 };

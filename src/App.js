@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Router, browserHistory, Route } from 'react-router';
-import {Home, About, Work} from './pages';
+import {Work} from './pages/Work';
+import {About} from './pages/About';
+import {Home} from './pages/Home';
 import './App.css';
 
 

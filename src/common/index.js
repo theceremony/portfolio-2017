@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 // import logo from '../logo.svg';
+import './index.css';
 
 export class Navigation extends Component {
   render() {
@@ -17,7 +18,7 @@ export class Navigation extends Component {
 export class Page extends Component {
     render() {
       return (
-        <div className="App">
+        <div className="Page">
           <Navigation />
           <div className="content-container">
             { this.props.children }

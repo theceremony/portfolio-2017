@@ -6,7 +6,7 @@ import './index.css';
 export class Navigation extends Component {
   render() {
     return (
-      <ul>
+      <ul className="Navigation">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/About">About</Link></li>
         <li><Link to="/Work">Work</Link></li>
@@ -18,7 +18,7 @@ export class Navigation extends Component {
 export class Page extends Component {
     render() {
       return (
-        <div className="Page">
+        <div className={"Page " + this.props.className}>
           <Navigation />
           <div className="content-container">
             { this.props.children }

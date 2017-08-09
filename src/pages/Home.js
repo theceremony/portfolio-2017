@@ -6,8 +6,8 @@ export class Home extends Component {
   render() {
 
     return (
-      <Page title="Home">
-        <div className="Home">
+      <Page title="Home" className="Home">
+        <div className="Home-Container">
           <h1>Art</h1>
           <h1>Code</h1>
           <h1>Theory</h1>
@@ -15,7 +15,6 @@ export class Home extends Component {
           <div>Jeramy Morrill</div>
         </div>
       </Page>
-
     )
   }
 };

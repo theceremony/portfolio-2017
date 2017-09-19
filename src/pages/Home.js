@@ -4,7 +4,6 @@ import './Home.css';
 
 export class Home extends Component {
   render() {
-
     return (
       <Page title="Home" className="Home">
         <div className="Home-Container">

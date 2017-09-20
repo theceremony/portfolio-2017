@@ -13,9 +13,9 @@ class App extends Component {
     return (
       <Router history={browserHistory}>
         <Route component={PageContainer}>
-          <Route path="/" component={Home} projectJSON={ProjectJSON} />
-          <Route path="/About" component={About} projectJSON={ProjectJSON} />
-          <Route path="/Work" component={Work} projectJSON={ProjectJSON} />
+          <Route path="/"       component={Home}  projectJSON={ProjectJSON} />
+          <Route path="/About"  component={About} projectJSON={ProjectJSON} />
+          <Route path="/Work"   component={Work}  projectJSON={ProjectJSON} />
         </Route>
       </Router>
     );

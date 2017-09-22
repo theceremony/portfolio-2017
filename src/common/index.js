@@ -32,9 +32,10 @@ export class Navigation extends Component {
   render() {
     const { isHidden } = this.state;
     return (
-      <nav className="Navigation">
-        <div id="menuToggle">
+      <nav id="Main-Navigation">
+        <div id="Main-Menu-Toggle">
           <input
+            id="Main-Menu-Toggle-Input"
             type="checkbox"
             name="isHidden"
             checked={isHidden}
@@ -43,7 +44,7 @@ export class Navigation extends Component {
           <span></span>
           <span></span>
           <span></span>
-          <div id="menu">
+          <div id="Main-Menu">
             <ul>
               <li><Link to="/" onClick={this.toggleIsHiddenInputValue}>Home</Link></li>
               <li><Link to="/About" onClick={this.toggleIsHiddenInputValue}>About</Link></li>
@@ -69,7 +70,7 @@ export class Page extends Component {
 export class PageContainer extends Component {
   render() {
     return(
-      <div className="page-container">
+      <div className="Page-Container">
         <Navigation />
         { this.props.children }
       </div>

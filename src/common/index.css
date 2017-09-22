@@ -1,31 +1,51 @@
 
+.Page-Container{
+    position: absolute;
+    /*left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow: hidden;*/
+}
+
 .Page{
   position: fixed;
   top:0;
   left:0;
   width: 100%;
-  height: 100%;
-  /*border: 1px solid #0f0;*/
+  height: 93%;
   z-index: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-left: 120px;
-  padding-top: 120px;
+  background-color: #fff;
+  padding-top: 10%;
 }
 
-#menuToggle{
+#Main-Navigation{
+    display: block;
+    position: fixed;
+    width:100%;
+    height:7%;
+    z-index: 1000;
+    background-color: rgba(255,255,255,.3);
+    /*box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, .1);*/
+}
+#Menu-Title{
+  position: fixed;
+  right:2%;
+  top:0;
+}
+#Main-Menu-Toggle{
   display: block;
   position: relative;
-  top: 50px;
-  left: 50px;
-
+  top: 33%;
+  left: 3%;
   z-index: 1;
-
   -webkit-user-select: none;
   user-select: none;
 }
 
-#menuToggle input{
+#Main-Menu-Toggle input{
   display: block;
   width: 40px;
   height: 32px;
@@ -41,7 +61,7 @@
   -webkit-touch-callout: none;
 }
 
-#menuToggle span{
+#Main-Menu-Toggle span{
   display: block;
   width: 33px;
   height: 4px;
@@ -60,43 +80,37 @@
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child{
+#Main-Menu-Toggle span:first-child{
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2){
+#Main-Menu-Toggle span:nth-last-child(2){
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span
+#Main-Menu-Toggle input:checked ~ span
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3){
+#Main-Menu-Toggle input:checked ~ span:nth-last-child(3){
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2){
+#Main-Menu-Toggle input:checked ~ span:nth-last-child(2){
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-#menu{
-  /*display: block;*/
+#Main-Menu{
   position: fixed;
-  /*width: 300px;*/
   width: 100%;
   height: 100%;
   top:0;
   left:0;
-  /*margin: -100px 0 0 -50px;*/
-  padding: 50px;
-  padding-top: 125px;
-
   background: #000;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
@@ -104,29 +118,60 @@
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-#menu ul {
-  list-style-type: none;
-  text-align: center;
+#Main-Menu-Toggle input:checked ~ #Main-Menu{
+  transform: translate(0, 0);
 }
 
-#menu ul li{
+#Main-Menu ul {
+  list-style-type: none;
+  text-align: center;
+  padding:0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+#Main-Menu ul li{
   padding: 10px 0;
   font-size: 22px;
 }
 
-#menu ul li a {
+#Main-Menu ul li a {
   font-family: 'Rajdhani', sans-serif;
   text-decoration: none;
-  color: #fff;
+  color: #999;
   font-size: 10vw;
   font-weight: 700;
   position:relative;
+  transition: all 0.25s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-#menu ul li a:hover {
-  text-decoration: line-through;
+#Main-Menu ul li a::after {
+    content: " ";
+    background-color: rgba(155,155,155,.7);
+    font-weight: bold;
+    width:100%;
+    position: absolute;
+    height: 0%;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 20;
+    opacity: 0;
+    transition: all 0.25s cubic-bezier(0.77,0.2,0.05,1.0);
 }
-#menuToggle input:checked ~ #menu{
-  transform: scale(1.0, 1.0);
+
+#Main-Menu ul li a:hover {
+  color: #fff;
+  transition: all 0.25s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#Main-Menu ul li a:hover::after  {
+  opacity: 100;
+  transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  height: 30%;
   opacity: 1;
+  /*width:100%;*/
 }

@@ -44,6 +44,7 @@ export class Navigation extends Component {
           <span></span>
           <span></span>
           <span></span>
+
           <div id="Main-Menu">
             <ul>
               <li><Link to="/" onClick={this.toggleIsHiddenInputValue}>Home</Link></li>
@@ -59,8 +60,9 @@ export class Navigation extends Component {
 
 export class Page extends Component {
     render() {
+      console.log(this.props.pageClass);
       return (
-        <div className="Page">
+        <div className={"Page " + this.props.pageClass}>
           <div className="content-container">{ this.props.children }</div>
         </div>
       )

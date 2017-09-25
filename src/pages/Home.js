@@ -5,7 +5,7 @@ import './Home.css';
 export class Home extends Component {
   render() {
     return (
-      <Page title="Home" className="Home">
+      <Page title="Home" pageClass="Home">
         <div className="Home-Container">
           <h1>Art</h1>
           <h1>Code</h1>

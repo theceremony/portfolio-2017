@@ -7,10 +7,13 @@ import './Work.css';
 class WorkItem extends Component {
   // ----------------------------------
   render(){
+      console.log(this.props.project);
       return(
         <div id={this.props.project.projectId} className="work-item">
-          <h2>{this.props.project.clientName}</h2>
-          <h3>{this.props.project.projectSubHead}</h3>
+          <div className="work-title">
+            <h1>{this.props.project.clientName}</h1>
+            <p>{this.props.project.projectSubHead}</p>
+          </div>
           <img alt={this.props.project.clientName} src={"/img/work/" + this.props.project.mediaFolder + "/main.jpg"} />
         </div>
       )
@@ -27,7 +30,7 @@ export class Work extends Component {
   // ----------------------------------
   render() {
     return (
-      <Page title="Work">{this.workLayoutMap()}</Page>
+      <Page title="Work" pageClass="Work">{this.workLayoutMap()}</Page>
     )
   }
 };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Page} from '../common';
 import './Home.css';
+import * as Pixi from 'pixi.js';
 
 export class Home extends Component {
   render() {

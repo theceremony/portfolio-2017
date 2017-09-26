@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './index.css';
-import './flexboxgrid.css';
+import 'flexboxgrid';
 //------------------------------------------------------------------------------
 export class Navigation extends Component {
 

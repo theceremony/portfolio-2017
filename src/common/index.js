@@ -64,11 +64,27 @@ export class PixiComponent  extends Component {
   //------------------------------------------
   app         : Pixi.Application;
   gameCanvas  : HTMLDivElement;
+  tickerQue   : Array;
+  bkgImgs     : Array;
   //------------------------------------------
   componentDidMount() {
     this.app = new Pixi.Application(window.innerWidth, window.innerHeight);
     this.gameCanvas.appendChild(this.app.view);
     this.app.start();
+    this.tickerQue = [];
+    this.bkgImgs = [];
+    this.app.ticker.add(function() {
+      for (const index in this.tickerQue) {
+        this.tickerQue[index]();
+      }
+    });
+  }
+  //------------------------------------------
+  showBackgroundImage(imgPath){
+    var bg    = Pixi.Sprite.fromImage(imgPath);
+    bg.width  = this.app.renderer.width;
+    bg.height = this.app.renderer.height;
+    this.app.stage.addChild(bg);
   }
   //------------------------------------------
   componentWillUnmount() { this.app.stop(); }

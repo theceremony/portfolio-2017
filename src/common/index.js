@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './index.css';
 import 'flexboxgrid';
+import * as Pixi from 'pixi.js';
 //------------------------------------------------------------------------------
 export class Navigation extends Component {
-
+  //------------------------------------------
   constructor(props) {
       super(props);
       this.state = {
@@ -14,7 +15,7 @@ export class Navigation extends Component {
       this.handleInputChange = this.handleInputChange.bind(this);
       this.toggleIsHiddenInputValue = this.toggleIsHiddenInputValue.bind(this);
   }
-
+  //------------------------------------------
   handleInputChange (event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -23,13 +24,13 @@ export class Navigation extends Component {
       [name]: value
     });
   }
-
+  //------------------------------------------
   toggleIsHiddenInputValue() {
     this.setState({
       isHidden: !this.state.isHidden
     });
   }
-
+  //------------------------------------------
   render() {
     const { isHidden } = this.state;
     return (
@@ -45,7 +46,6 @@ export class Navigation extends Component {
           <span></span>
           <span></span>
           <span></span>
-
           <div id="Main-Menu">
             <ul>
               <li><Link to="/" onClick={this.toggleIsHiddenInputValue}>Home</Link></li>
@@ -57,17 +57,39 @@ export class Navigation extends Component {
       </nav>
     )
   }
+  //------------------------------------------
 };
 
+export class PixiComponent  extends Component {
+  //------------------------------------------
+  app         : Pixi.Application;
+  gameCanvas  : HTMLDivElement;
+  //------------------------------------------
+  componentDidMount() {
+    this.app = new Pixi.Application(window.innerWidth, window.innerHeight);
+    this.gameCanvas.appendChild(this.app.view);
+    this.app.start();
+  }
+  //------------------------------------------
+  componentWillUnmount() { this.app.stop(); }
+  //------------------------------------------
+  render() {
+    let component = this;
+    return (
+      <div ref={(thisDiv) => {component.gameCanvas = thisDiv}} />
+    );
+  }
+  //------------------------------------------
+}
+
 export class Page extends Component {
-    render() {
-      console.log(this.props.pageClass);
-      return (
-        <div className={"Page " + this.props.pageClass}>
-          <div className="content-container">{ this.props.children }</div>
-        </div>
-      )
-    }
+  render() {
+    return (
+      <div className={"Page " + this.props.pageClass}>
+        <div className="content-container">{ this.props.children }</div>
+      </div>
+    )
+  }
 };
 
 export class PageContainer extends Component {

@@ -1,41 +1,19 @@
 
 .work-item {
   position: relative;
-  /*width: 100px;
-    height: 100px;
-    margin: 2px;
-    text-align: center;
-    line-height: 100px;
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 5em;
-    color: #594255;*/
 }
 
 .work-item img{
   width:100%;
 }
 
-
-.work-item h1{
-  /*font-size: 15vw;*/
-  text-transform: uppercase;
-  line-height: 100%;
-  background-color:#fff;
-  padding:0;
+.work-item h1,h2,h3,p{
   margin:0;
-  margin-bottom: 10px;
-}
-
-.work-item p{
-  /*font-size: 3vw;*/
-  line-height: 120%;
-  background-color:#fff;
   padding:0;
-  margin:0;
 }
 
 .work-title{
   position: absolute;
-  padding:40px;
+  padding:10px;
+  bottom:0;
 }

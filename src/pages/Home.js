@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {Page} from '../common';
+import {Page,PixiComponent} from '../common';
 import './Home.css';
-import * as Pixi from 'pixi.js';
 
 export class Home extends Component {
   render() {
     return (
       <Page title="Home" pageClass="Home">
+        <PixiComponent ref="pixiC"/>
         <div className="Home-Container">
           <h1>Art</h1>
           <h1>Code</h1>

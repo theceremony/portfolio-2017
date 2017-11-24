@@ -31,7 +31,7 @@ class WorkItem extends Component {
     return(
         <div id={this.props.project.projectId} onClick={this.handleClick} data-slug={this.props.project.projectId} className="work-item col-xs-12 col-sm-8 col-md-6 col-lg-4">
           <div className="work-title">
-            <h1>{this.props.project.clientName}</h1>
+            <h2>{this.props.project.projectName}</h2>
             <p>{this.props.project.projectSubHead}</p>
           </div>
           <img alt={this.props.project.clientName} src={"/img/work/" + this.props.project.mediaFolder + "/thumb.jpg"} />

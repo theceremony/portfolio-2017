@@ -4,12 +4,32 @@ import {Page} from '../common';
 import './Work.css';
 // ----------------------------------
 
+class WorkPage extends Component {
+
+
+  render(){
+
+    return(
+      <Page title="work" pageClass="WorkPage">
+        <div class="">
+          <a href="">here is that stuff</a>
+        </div>
+      </Page>
+    )
+  }
+}
+
+
 class WorkItem extends Component {
   // ----------------------------------
+  handleClick(event){
+    console.log(event);
+    console.log("what's the deal bro");
+  }
   render(){
-      console.log(this.props.project);
-      return(
-        <div id={this.props.project.projectId} className="work-item col-xs-12 col-sm-8 col-md-6 col-lg-4">
+    console.log(this.props.project);
+    return(
+        <div id={this.props.project.projectId} onClick={this.handleClick} data-slug={this.props.project.projectId} className="work-item col-xs-12 col-sm-8 col-md-6 col-lg-4">
           <div className="work-title">
             <h1>{this.props.project.clientName}</h1>
             <p>{this.props.project.projectSubHead}</p>
